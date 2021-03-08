@@ -9,6 +9,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'products', component: ProductsListComponent},
   { path: '**', component: PageNotFoundComponent }
-]
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ const routes: Routes = [
     ContactComponent,
     ProductsListComponent,
     NavigationComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,

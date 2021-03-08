@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  todayDate =  new Date();
+  testObj = {
+    a: 1,
+    b: 'asdasd'
+  };
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  handleClick(event: PointerEvent): void {
+    console.log(event);
+    this.todayDate = new Date();
   }
 
 }
