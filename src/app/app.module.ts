@@ -15,6 +15,9 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { TestService } from './test.service';
 import { CounterService } from './counter.service';
 import { ObservablesComponent } from './observables/observables.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TestPipe } from './test.pipe';
+import { TestDirective } from './test.directive';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -37,14 +40,17 @@ const routes: Routes = [
     PageNotFoundComponent,
     ProductItemComponent,
     TestComponent,
-    ObservablesComponent
+    ObservablesComponent,
+    TestPipe,
+    TestDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [TestService, CounterService],
+  providers: [{ provide: TestService, useClass: TestService }, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

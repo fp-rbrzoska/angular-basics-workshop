@@ -20,7 +20,7 @@ export class TestService {
   }
 
   getProfile() {
-    return this.http.get<any>('http://localhost:3000/profile')
+    return this.http.get<any>(`http://localhost:3000/profile`)
   }
 
 }

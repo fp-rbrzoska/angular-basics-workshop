@@ -4,3 +4,25 @@
 <ng-container *ngIf="profile$ | async as profileData">
   {{profileData.name}}
 </ng-container>
+<div class="container">
+  <form [formGroup]="testForm" (submit)="handleSubmit()">
+    <div class="form-group">
+      <label for="inputName" class="col-sm-1-12 col-form-label">Name</label>
+      <div class="col-sm-1-12">
+        <input type="text" class="form-control" formControlName="username" >
+      </div>
+      <label for="inputName" class="col-sm-1-12 col-form-label">Email</label>
+      <div class="col-sm-1-12">
+        <input type="text" class="form-control" formControlName="email" >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div>
+        <button type="submit" class="btn btn-primary">Action</button>
+      </div>
+    </div>
+    <code>{{ testForm.controls.username.errors | json}}</code>
+    <code>{{ testForm.controls.email.errors | json}}</code>
+  </form>
+</div>
