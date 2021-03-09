@@ -1,1 +1,2 @@
-<fp-product-item *ngFor="let product of products" [product]="product"></fp-product-item>
+<fp-product-item *ngFor="let product of products$ | async" [product]="product"></fp-product-item>
+{{ products$ | async | json}}

@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProductItemComponent } from './product-item/product-item.component';
 import { TestService } from './test.service';
 import { CounterService } from './counter.service';
+import { ObservablesComponent } from './observables/observables.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'products', component: ProductsListComponent},
   { path: 'test', component: TestComponent},
+  { path: 'observables', component: ObservablesComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
@@ -33,7 +35,8 @@ const routes: Routes = [
     NavigationComponent,
     PageNotFoundComponent,
     ProductItemComponent,
-    TestComponent
+    TestComponent,
+    ObservablesComponent
   ],
   imports: [
     BrowserModule,

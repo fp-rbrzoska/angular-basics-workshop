@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from '../models/Product';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'fp-products-list',
@@ -8,16 +10,11 @@ import { Product } from '../models/Product';
 })
 export class ProductsListComponent implements OnInit {
 
-  products: Product[] = [{
-    name: 'prod1',
-    price: 17.99,
-    description: 'Description 1'
-  }, {
-    name: 'prod2',
-    price: 0.99
-  }];
+  products$: Observable<Product[]>;
 
-  constructor() { }
+  constructor(private productsService: ProductsService) {
+    this.products$ = productsService.getAllProducts();
+  }
 
   ngOnInit(): void {
   }
