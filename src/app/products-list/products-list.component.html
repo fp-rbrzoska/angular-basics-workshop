@@ -1,2 +1,1 @@
-<fp-product-item [product]="product1"></fp-product-item>
-<fp-product-item [product]="product2"></fp-product-item>
+<fp-product-item *ngFor="let product of products" [product]="product"></fp-product-item>

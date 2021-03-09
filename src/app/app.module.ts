@@ -7,9 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { TestComponent } from './test/test.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductItemComponent } from './product-item/product-item.component';
+import { TestService } from './test.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,6 +19,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'about', component: AboutComponent},
   { path: 'products', component: ProductsListComponent},
+  { path: 'test', component: TestComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
@@ -28,13 +31,14 @@ const routes: Routes = [
     ProductsListComponent,
     NavigationComponent,
     PageNotFoundComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [TestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

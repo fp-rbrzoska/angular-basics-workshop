@@ -9,6 +9,9 @@
     "fp-proj": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
         "@schematics/angular:component": {
           "style": "scss",
           "skipTests": true

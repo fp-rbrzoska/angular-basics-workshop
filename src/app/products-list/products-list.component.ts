@@ -8,15 +8,15 @@ import { Product } from '../models/Product';
 })
 export class ProductsListComponent implements OnInit {
 
-  product1: Product = {
+  products: Product[] = [{
     name: 'prod1',
-    price: 17.99
-  }
-
-  product2: Product = {
+    price: 17.99,
+    description: 'Description 1'
+  }, {
     name: 'prod2',
     price: 0.99
-  }
+  }];
+
   constructor() { }
 
   ngOnInit(): void {
