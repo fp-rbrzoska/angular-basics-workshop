@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -12,10 +13,14 @@ export class TestService {
     return this.testData;
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   changeData() {
     this.testData.a++;
+  }
+
+  getProfile() {
+    return this.http.get<any>('http://localhost:3000/profile')
   }
 
 }

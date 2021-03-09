@@ -32,7 +32,8 @@ export class ObservablesComponent implements OnInit {
   obs2$: Observable<number> = interval(1000);
 
   subj = new Subject();
-  bsubj = new BehaviorSubject(0);
+  private bsubj = new BehaviorSubject(0);
+  b$ = this.bsubj.asObservable()
   constructor() { }
 
   ngOnInit(): void {
@@ -53,7 +54,7 @@ export class ObservablesComponent implements OnInit {
 
     this.bsubj.subscribe(val => console.log(val));
 
-    this.bsubj.next(2)
+    this.bsubj.complete()
 
     // this.promise.then((res)=> {
     //   console.log(res)

@@ -1,1 +1,6 @@
-<p>test works!</p>
+<div>{{(profile$ | async)?.email}}</div>
+<div>{{profile$ | async | json}}</div>
+
+<ng-container *ngIf="profile$ | async as profileData">
+  {{profileData.name}}
+</ng-container>
