@@ -12,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { TestService } from './test.service';
+import { CounterService } from './counter.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -38,7 +39,7 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [TestService],
+  providers: [TestService, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
